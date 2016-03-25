@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ninjabunny/mre.git"
+    "url": "https://github.com/darktwinge/mre.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ninjabunny/mre/issues"
+    "url": "https://github.com/darktwinge/mre/issues"
   },
-  "homepage": "https://github.com/ninjabunny/mre",
+  "homepage": "https://github.com/darktwinge/mre",
   "devDependencies": {
     "browser-sync": "^2.8.2",
     "gulp-jasmine": "^2.0.1",

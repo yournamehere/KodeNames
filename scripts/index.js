@@ -11,11 +11,11 @@ var NUMBER_OF_WORDS = 25;
 var spyMasterMode = false;
 var sessionData = [];
 
-var COLOR_RED = "#ee0000";
-var COLOR_YELLOW = "#eeee00";
-var COLOR_BLUE = "#00ccee";
-var COLOR_BLACK = "#707070";
-var COLOR_GREEN = "#009800";
+var COLOR_RED = "#ff1111";
+var COLOR_YELLOW = "#f4f410";
+var COLOR_BLUE = "#00cce0";
+var COLOR_BLACK = "#888888";
+var COLOR_GREEN = "#109810";
 
 function fire(){
 	//get seed and set the seed for randomizer

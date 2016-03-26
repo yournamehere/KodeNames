@@ -11,7 +11,7 @@ var NUMBER_OF_WORDS = 25;
 var spyMasterMode = false;
 var sessionData = [];
 
-var COLOR_RED = "#ff0000";
+var COLOR_RED = "#ff00ee";
 var COLOR_YELLOW = "#ffff00";
 var COLOR_BLUE = "#00eeee";
 var COLOR_BLACK = "#808080";

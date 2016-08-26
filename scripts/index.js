@@ -27,6 +27,12 @@ window.onload = function(){
 function fire(){
 	//get seed and set the seed for randomizer
 	var seed = document.getElementById("seed").value;
+	if (!seed) {
+		Math.seedrandom();
+		seed = Math.floor( 1000* Math.random());
+		seed = seed.toString();
+	}
+	document.getElementById("seed").value = seed;
 	Math.seedrandom(seed);
 
 	//reset state to pristine state

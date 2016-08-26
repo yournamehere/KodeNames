@@ -17,6 +17,13 @@ var COLOR_BLUE = "#00d3de";
 var COLOR_BLACK = "#8d8d8d";
 var COLOR_GREEN = "#199819";
 
+window.onload = function(){
+	var seed = location.search.match(/seed=(\d+)/);
+	if (!seed) {return}
+	document.getElementById("seed").value = seed[1];
+	fire();
+}
+
 function fire(){
 	//get seed and set the seed for randomizer
 	var seed = document.getElementById("seed").value;

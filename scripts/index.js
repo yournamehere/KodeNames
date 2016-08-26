@@ -18,32 +18,22 @@ var COLOR_BLACK = "#8d8d8d";
 var COLOR_GREEN = "#199819";
 
 window.onload = function(){
-	var seed = location.search.match(/seed=(\d+)/);
+	var seed = location.search.match(/seed=(\w+)/);
 	if (!seed) {return}
 	document.getElementById("seed").value = seed[1];
-	fire();
+	createNewGame();
 }
 
 function fire(){
-	//get seed and set the seed for randomizer
+	//get seed, generate if not present
 	var seed = document.getElementById("seed").value;
 	if (!seed) {
 		Math.seedrandom();
-		seed = Math.floor( 1000* Math.random());
+		seed = Math.floor( 10000 * Math.random());
 		seed = seed.toString();
 	}
-	document.getElementById("seed").value = seed;
-	Math.seedrandom(seed);
-
-	//reset state to pristine state
-	sessionData = data.slice(0);
-	wordsSelected = [];
-	teams = [];
-	spyMasterMode = false;
-	document.getElementById("board").innerHTML = "";
-
-	//fire new board
-	createNewGame();
+	//reload page
+	window.location.href = window.location.href.replace(/(index.html|\?seed=.*)*$/, 'index.html?seed=' + seed);	
 }
 
 //not used, but probably useful at some point
@@ -54,7 +44,19 @@ function removeItem(array, index){
 	}
 }
 
-function createNewGame(){	
+function createNewGame(){
+	//get seed
+	var seed = document.getElementById("seed").value;
+	Math.seedrandom(seed);
+	
+	//reset state to pristine state
+	sessionData = data.slice(0);
+	wordsSelected = [];
+	teams = [];
+	spyMasterMode = false;
+
+	document.getElementById("board").innerHTML = "";
+
 	var trs = [];
 	for(var i = 0; i < NUMBER_OF_WORDS; i++){
 		if (!trs[i%5]){
